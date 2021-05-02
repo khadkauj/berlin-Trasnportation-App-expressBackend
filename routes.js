@@ -27,4 +27,12 @@ router.get("/stopdepartures/:id", (req, res) => {
         .catch(error => res.json(error))
 })
 
+router.get("", (req, res) => {
+    const client = createClient(vbbProfile, 'my-awesome-program')
+    const id = req.params.id
+    client.stop(id)
+        .then(data => res.json(data)) //returning data
+        .catch(error => res.json(error))
+})
+
 module.exports = router;
