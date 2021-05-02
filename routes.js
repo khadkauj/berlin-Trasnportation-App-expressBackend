@@ -27,7 +27,7 @@ router.get("/stopdepartures/:id", (req, res) => {
         .catch(error => res.json(error))
 })
 
-router.get("", (req, res) => {
+router.get("/stopdetails/:id", (req, res) => {
     const client = createClient(vbbProfile, 'my-awesome-program')
     const id = req.params.id
     client.stop(id)
